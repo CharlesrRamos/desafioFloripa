@@ -1,0 +1,15 @@
+export { default as IconAll } from './Vectorall.svg';
+export { default as IconBar } from './Vectorbar.svg';
+export { default as IconBurger } from './Vectorburger.svg';
+export { default as IconCoupon } from './Vectorcuppon.svg';
+export { default as IconExtra } from './Vectorextra.svg';
+export { default as IconFavorite } from './Vectorfavorite.svg';
+export { default as IconHome } from './Vectorhome.svg';
+export { default as IconLike } from './Vectorlike.svg';
+export { default as IconMenu } from './Vectormenu.svg';
+export { default as IconOriental } from './Vectororiental.svg';
+export { default as IconPizza } from './Vectorpizza.svg';
+export { default as IconProfile } from './Vectorprofile.svg';
+export { default as IconRestaurant } from './Vectorrestaurant.svg';
+export { default as IconSearch } from './Vectorsearch.svg';
+export { default as IconStar } from './Vectorstar.svg';
