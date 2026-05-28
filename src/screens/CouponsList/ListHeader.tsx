@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import {
   IconAll,
@@ -43,9 +38,9 @@ export function ListHeader() {
   return (
     <View style={styles.wrapper}>
       <View style={styles.topBand}>
-      <View style={styles.loginButton}>
-        <Text style={styles.loginText}>Login / Cadastro</Text>
-      </View>
+        <View style={styles.loginButton}>
+          <Text style={styles.loginText}>Login / Cadastro</Text>
+        </View>
       </View>
 
       <View style={styles.searchBar}>
@@ -59,19 +54,21 @@ export function ListHeader() {
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
-        contentContainerStyle={styles.categoriesContent}>
+        contentContainerStyle={styles.categoriesContent}
+      >
         {CATEGORIES.map(({ id, label, Icon, active }, index) => (
           <View key={`${id}-${index}`} style={styles.categoryItem}>
             <Icon
-                width={22}
-                height={22}
-                color={active ? colors.accent : colors.textPrimary}
-              />
+              width={22}
+              height={22}
+              color={active ? colors.accent : colors.textPrimary}
+            />
             <Text
               style={[
                 styles.categoryLabel,
                 index === 0 && styles.categoryLabelActive,
-              ]}>
+              ]}
+            >
               {label}
             </Text>
           </View>
@@ -81,7 +78,7 @@ export function ListHeader() {
       <View style={styles.divider} />
     </View>
   );
-};
+}
 
 const SEARCH_HEIGHT = 44;
 
@@ -93,7 +90,7 @@ const styles = StyleSheet.create({
   topBand: {
     backgroundColor: colors.background,
     paddingTop: 40,
-    paddingBottom:35,
+    paddingBottom: 35,
   },
 
   loginButton: {
@@ -134,7 +131,7 @@ const styles = StyleSheet.create({
   },
   categoryItem: {
     alignItems: 'center',
-   gap: 4,
+    gap: 4,
   },
 
   categoryLabel: {

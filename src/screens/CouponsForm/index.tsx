@@ -18,12 +18,14 @@ export function CouponsForm({ navigation, route }: CouponsFormProps) {
   const couponId = route.params?.couponId;
   const isEditing = Boolean(couponId);
 
-  const existing = useCouponsStore(state =>
-    couponId ? state.coupons.find(coupon => coupon.id === couponId) : undefined,
+  const existing = useCouponsStore((state) =>
+    couponId
+      ? state.coupons.find((coupon) => coupon.id === couponId)
+      : undefined,
   );
 
-  const addCoupon = useCouponsStore(state => state.addCoupon);
-  const updateCoupon = useCouponsStore(state => state.updateCoupon);
+  const addCoupon = useCouponsStore((state) => state.addCoupon);
+  const updateCoupon = useCouponsStore((state) => state.updateCoupon);
 
   const [title, setTitle] = useState(existing?.title ?? '');
   const [description, setDescription] = useState(existing?.description ?? '');
@@ -55,14 +57,16 @@ export function CouponsForm({ navigation, route }: CouponsFormProps) {
   return (
     <KeyboardAvoidingView
       style={styles.container}
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+    >
       <ScrollView
         contentContainerStyle={styles.content}
-        keyboardShouldPersistTaps="handled">
+        keyboardShouldPersistTaps="handled"
+      >
         <Text style={styles.label}>Título *</Text>
         <TextInput
           value={title}
-          onChangeText={text => {
+          onChangeText={(text) => {
             setTitle(text);
             if (titleError) {
               setTitleError(null);

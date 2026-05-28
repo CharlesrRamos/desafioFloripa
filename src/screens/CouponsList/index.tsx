@@ -1,5 +1,12 @@
 import React from 'react';
-import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  FlatList,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { colors, spacing } from '../../theme';
@@ -9,7 +16,6 @@ import { CouponsListProps } from '../../navigation/types';
 import { CouponCard } from '../../components/CouponCard';
 import { useCouponsStore } from '../../store/useCouponsStore';
 
-
 function Banner() {
   return (
     <Image source={require('../../assets/banner.png')} style={styles.banner} />
@@ -18,7 +24,7 @@ function Banner() {
 
 export function CouponsList({ navigation }: CouponsListProps) {
   const insets = useSafeAreaInsets();
-  const coupons  = useCouponsStore(state => state.coupons);
+  const coupons = useCouponsStore((state) => state.coupons);
 
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
@@ -32,7 +38,9 @@ export function CouponsList({ navigation }: CouponsListProps) {
         renderItem={({ item }) => (
           <CouponCard
             coupon={item}
-            onPress={() => navigation.navigate('CouponsForm', { couponId: item.id })}
+            onPress={() =>
+              navigation.navigate('CouponsForm', { couponId: item.id })
+            }
           />
         )}
         contentContainerStyle={styles.listContent}
@@ -40,14 +48,14 @@ export function CouponsList({ navigation }: CouponsListProps) {
       />
 
       <TouchableOpacity
-        style={[styles.fab, {bottom: insets.bottom + 30}]}
+        style={[styles.fab, { bottom: insets.bottom + 30 }]}
         activeOpacity={0.8}
-        accessibilityRole='button'
-        accessibilityLabel='Adicionar cupom'
-        onPress={() => navigation.navigate('CouponsForm')}>
-
+        accessibilityRole="button"
+        accessibilityLabel="Adicionar cupom"
+        onPress={() => navigation.navigate('CouponsForm')}
+      >
         <Text style={styles.fabIcon}>+</Text>
-       </TouchableOpacity>
+      </TouchableOpacity>
 
       <FakeTabBar />
     </View>
@@ -86,7 +94,7 @@ const styles = StyleSheet.create({
   },
   fabIcon: {
     color: colors.background,
-    fontSize:20,
+    fontSize: 20,
     fontWeight: 700,
     marginTop: -2,
   },

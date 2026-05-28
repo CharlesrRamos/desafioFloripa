@@ -28,7 +28,8 @@ export const mockCoupons: Coupon[] = [
   {
     id: 'mock-3',
     title: 'Pizzaria Nápoles',
-    description: 'Compre uma pizza grande e a segunda sai pela metade do preço.',
+    description:
+      'Compre uma pizza grande e a segunda sai pela metade do preço.',
     imageUrl: pizzaImage,
     partnerLogoUrl: partnerLogo,
     isBonus: true,

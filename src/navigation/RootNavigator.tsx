@@ -10,9 +10,19 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 export const RootNavigator = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="CouponsList" component={CouponsList} options={{ headerShown: false }} />
-      <Stack.Screen name="CouponsForm" component={CouponsForm} options={{ headerStyle: { backgroundColor: colors.background },
-    headerTintColor: colors.textPrimary }} />
+      <Stack.Screen
+        name="CouponsList"
+        component={CouponsList}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="CouponsForm"
+        component={CouponsForm}
+        options={{
+          headerStyle: { backgroundColor: colors.background },
+          headerTintColor: colors.textPrimary,
+        }}
+      />
     </Stack.Navigator>
   );
 };
